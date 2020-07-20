@@ -1,6 +1,7 @@
 {
   "short_name": "Watchly",
-  "name": "Watchly",
+  "name": "Watchly Online Streaming",
+  "description": "Watchly - Online Movies and Series Streaming",
   "icons": [
     {
       "src": "img/icon_128.png",
@@ -26,7 +27,7 @@
       "src": "img/maskable_icon.png",
       "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",
