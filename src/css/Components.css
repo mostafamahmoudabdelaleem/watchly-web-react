@@ -1,3 +1,6 @@
+body{
+    font-family: 'Roboto';
+}
 .install-promote-container{
     position: fixed;
     left: 0;
@@ -39,4 +42,55 @@
     color: #f4511e;
     border-color: #f4511e;
     background-color: #fff;
+}
+
+.navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar-light .navbar-toggler{
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.navbar-toggler span{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-nav .nav-item{
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: #fff !important;
+    padding: 16px;
+    margin: 0;
+    font-size: 12px;
+}
+
+.navbar-nav .nav-item .nav-link:hover, .navbar-nav .nav-item.active .nav-link {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+
+.nav-item .nav-link .nav-img{
+    display: inline;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-right: 4px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.nav-item .nav-link.for-img{
+    padding: 10px;
 }
