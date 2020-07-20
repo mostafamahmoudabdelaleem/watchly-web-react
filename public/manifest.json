@@ -1,11 +1,16 @@
 {
   "short_name": "Watchly",
-  "name": "Watchly - Online Movies and Series Streaming",
+  "name": "Watchly",
   "icons": [
     {
       "src": "img/icon_128.png",
       "type": "image/png",
-      "sizes": "128x128"
+      "sizes": "32x32 64x64 96x96 128x128"
+    },
+    {
+      "src": "img/icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     },
     {
       "src": "img/icon_256.png",
