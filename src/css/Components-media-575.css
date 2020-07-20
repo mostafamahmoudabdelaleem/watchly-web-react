@@ -1,0 +1,18 @@
+@media (max-width: 575.98px) {
+    .install-promote-container .row{
+        margin: 0;
+        margin-left: -4px;
+        font-size: 14px;
+    }
+    .install-promote-container .row p{
+        margin-right: 6px;
+    }
+    .install-button{
+        font-size: 14px;
+        padding: 6px;
+    }
+    .install-promote-close{
+        right: 6px;
+        margin-top: 4px;
+    }
+}

@@ -1,0 +1,42 @@
+.install-promote-container{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #f4511e;
+    color: snow;
+    width: 100%;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.install-promote-container .row{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.install-promote-container .row p{
+    margin-top: 6px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    
+}
+
+.install-promote-close{
+    position: absolute;
+    right: 8px;
+    margin-top: 6px;
+}
+
+.install-button{
+    color: #fff;
+    border-color: #fff;
+    background-color: #f4511e;
+    
+}
+
+.install-button:hover{
+    color: #f4511e;
+    border-color: #f4511e;
+    background-color: #fff;
+}
