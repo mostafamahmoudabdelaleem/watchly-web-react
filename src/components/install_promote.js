@@ -9,14 +9,16 @@ export default class InstallPromote extends Component {
             divIsHidden: true,
             deferredPrompt: null,
         }
+        var promptEvent;
     }
 
-    componentWillMount(){
+    componentDidMount(){
         window.addEventListener('beforeinstallprompt', (e) => {
             // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
             // Stash the event so it can be triggered later.
             this.setState({deferredPrompt: e});
+            this.promptEvent = e;
             // Update UI notify the user they can install the PWA
             this.showInstallPromote();
         });
@@ -38,13 +40,22 @@ export default class InstallPromote extends Component {
         // Hide the app provided install promotion
         this.hideInstallPromote();
         this.deferredPrompt.prompt();
+        this.promptEvent.prompt();
         // Wait for the user to respond to the prompt
         this.deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the install prompt');
-        } else {
-            console.log('User dismissed the install prompt');
-        }
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
+        });
+
+        this.promptEvent.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+                console.log('User accepted the install prompt');
+            } else {
+                console.log('User dismissed the install prompt');
+            }
         });
     }
 
