@@ -5,12 +5,12 @@ import '../css/Components.css';
 import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
 
-export default function Movie() {
+export default function Episode() {
     let { id } = useParams();
     return (
         <div>
             <Navbar />
-            <h3>Movie name: {id}</h3>
+            <h3>Episode name: {id}</h3>
         </div>
     )
 }

@@ -4,12 +4,12 @@ import '../css/Components.css';
 import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
 
-export default class Series extends Component {
+export default class Profile extends Component {
     render() {
         return (
             <div>
-                <Navbar activeTab="Series"/>
-                <h3>Series</h3>
+                <Navbar activeTab="Mostafa"/>
+                <h3>Profile</h3>
             </div>
         )
     }
