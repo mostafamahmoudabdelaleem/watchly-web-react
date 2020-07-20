@@ -9,7 +9,8 @@ export default class InstallPromote extends Component {
             divIsHidden: true,
             deferredPrompt: null,
         }
-        var promptEvent;
+        let promptEvent;
+        this.installApp = this.installApp.bind(this);
     }
 
     componentDidMount(){
