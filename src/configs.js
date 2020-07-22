@@ -17,8 +17,8 @@ export const CONFIGS = {
     LOCAL_USER_NAME_KEY: "uname",
     LOCAL_USER_PIC_KEY: "upic",
     // signin PWA-Auth key
-    MICROSOFT_KEY: "...",
+    MICROSOFT_KEY: "9de0cbd2-a874-420f-aa5e-de5550766799",
     GOOGLE_KEY: "896772888299-6ngsuchb4gg5pulom75hpaf9hhucepqq.apps.googleusercontent.com",
-    FACEBOOK_KEY: "...",
-    APPLE_KEY: "..."
+    FACEBOOK_KEY: "324478608958999",
+    APPLE_KEY: ""
 }
