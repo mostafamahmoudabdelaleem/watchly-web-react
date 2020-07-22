@@ -6,11 +6,13 @@ import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
 
 export default function Movie() {
-    let { id } = useParams();
+    let { id, name } = useParams();
+    let link = `https://eg4.akwam.net/movie/${id}/${name}`
+
     return (
         <div>
             <Navbar />
-            <h3>Movie name: {id}</h3>
+            <h3>Movie link: {link}</h3>
         </div>
     )
 }
