@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import { CONFIGS } from '../configs'
 import NavItem from './navItem'
 
 export default class Navbar extends Component {
     render() {
         let p = {
-            username: this.props.username,
-            profilePic: this.props.profilePic,
+            username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
+            profilePic: localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY),
             active: this.props.activeTab
         }
 
@@ -23,7 +24,7 @@ export default class Navbar extends Component {
                         <NavItem name="Series" link="/series" icon="film" active={p.active}/>
                     </ul>
                     {
-                        typeof(p.username) === "undefined" 
+                        p.username === null 
                         ?
                             <ul className="navbar-nav">
                                 <NavItem name="Signin" link="/login" icon="sign-in-alt" active={p.active}/>
