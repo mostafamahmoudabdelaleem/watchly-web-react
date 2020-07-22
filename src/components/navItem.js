@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+
 
 
 export default class NavItem extends Component {
@@ -14,13 +16,13 @@ export default class NavItem extends Component {
         return (
             (p.isImg ?
                 <li className={(p.isActive ? 'nav-item active' : 'nav-item')}>
-                    <a className="nav-link for-img" href={p.link}>
+                    <Link className="nav-link for-img" to={p.link}>
                         <img className="nav-img" src={p.imgUrl} alt={p.name}/> {p.name}
-                    </a>
+                    </Link>
                 </li>
             :
                 <li className={(p.isActive ? 'nav-item active' : 'nav-item')}>
-                    <a className="nav-link" href={p.link}><i className={p.icon}></i> {p.name}</a>
+                    <Link className="nav-link" to={p.link}><i className={p.icon}></i> {p.name}</Link>
                 </li>
             )
         )
