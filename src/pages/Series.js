@@ -18,7 +18,19 @@ export default class Series extends Component {
         };
     }
     componentDidMount(){
-        this.fetchSeries();
+        let localSeries = JSON.parse(localStorage.getItem(CONFIGS.LOCAL_SERIES_KEY))
+        let localSeriesTS = parseInt(localStorage.getItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY))
+        
+        let cond1 = (((Math.floor(Date.now() / 1000)) - localSeriesTS) > CONFIGS.LOCAL_CACHE_INTERVAL)
+        let cond2 = (localSeries === null || localSeriesTS === null)
+
+        if(cond1 || cond2){
+            this.fetchSeries();
+        }
+        this.setState({
+            allSeries: localSeries,
+            loaderIsHidden: true
+        })
     }
 
     fetchSeries = () => {
@@ -31,6 +43,8 @@ export default class Series extends Component {
                 loaderIsHidden:true
             })
             console.log('start end')
+            localStorage.setItem(CONFIGS.LOCAL_SERIES_KEY, JSON.stringify(data))
+            localStorage.setItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY, (Math.floor(Date.now() / 1000)).toString())
         }).catch(err => console.log(err))
     }
 
