@@ -22,7 +22,10 @@ export default class Series extends Component {
     }
 
     fetchMovies = () => {
-        
+        this.setState({
+            movies: [],
+            loaderIsHidden: true
+        })
     }
 
     render() {
@@ -37,7 +40,7 @@ export default class Series extends Component {
                             {this.state.movies ? 
                                 <div className="container">
                                     <h2 className="fg-orange">
-                                        <i className="fas fa-film"></i> Recent:
+                                        <i className="fas fa-video"></i> Recent:
                                     </h2>
                                     <div className="row">
                                         <DisplayList list={this.state.movies} />

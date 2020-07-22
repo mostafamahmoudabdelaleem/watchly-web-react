@@ -6,11 +6,13 @@ import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
 
 export default function Aseries() {
-    let { id } = useParams();
+    let { id, name } = useParams();
+    let link = `https://eg4.akwam.net/series/${id}/${name}`
+    
     return (
         <div>
             <Navbar />
-            <h3>Series name: {id}</h3>
+            <h3>Series link: {link}</h3>
         </div>
     )
 }

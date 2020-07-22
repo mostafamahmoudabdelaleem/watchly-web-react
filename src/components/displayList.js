@@ -22,7 +22,12 @@ export default class DisplayList extends Component {
                 {this.props.list ? 
                     this.props.list.map((item, i) => {
                         return(
-                            <DisplayItem item={item} key={i}/>
+                            <DisplayItem 
+                                item={item} 
+                                key={i}
+                                replace={this.props.replace}
+                                with={this.props.with}
+                            />
                         )
                     })
                     :

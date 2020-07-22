@@ -7,10 +7,12 @@ import '../css/Components-media-991.css';
 
 export default function Episode() {
     let { id } = useParams();
+    let link = `https://eg4.akwam.net/episode/${id}`
+    
     return (
         <div>
             <Navbar />
-            <h3>Episode name: {id}</h3>
+            <h3>Episode link: {link}</h3>
         </div>
     )
 }

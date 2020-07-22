@@ -22,6 +22,7 @@ export default class Series extends Component {
     }
 
     fetchSeries = () => {
+        console.log('start fetch')
         fetch("https://cors-anywhere.herokuapp.com/"+this.state.api_url)
         .then(res => res.json())
         .then(data => {
@@ -29,6 +30,7 @@ export default class Series extends Component {
                 allSeries: data,
                 loaderIsHidden:true
             })
+            console.log('start end')
         }).catch(err => console.log(err))
     }
 
@@ -44,10 +46,14 @@ export default class Series extends Component {
                             {this.state.allSeries ? 
                                 <div className="container">
                                     <h2 className="fg-orange">
-                                        <i className="fas fa-film"></i> Recent:
+                                        <i className="fas fa-film"></i> Recent Series:
                                     </h2>
                                     <div className="row">
-                                        <DisplayList list={this.state.allSeries} />
+                                        <DisplayList 
+                                            list={this.state.allSeries} 
+                                            replace="series"
+                                            with="aseries"
+                                        />
                                     </div>
                                 </div>
                             :

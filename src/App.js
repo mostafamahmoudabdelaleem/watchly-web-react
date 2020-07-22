@@ -21,8 +21,8 @@ function App() {
         <Route path = "/profile" component = {Profile} />
         <Route path = "/login" component = {Login} />
         <Route path = "/register" component = {Register} />
-        <Route path = "/movie/:id" component = {Movie} />
-        <Route path = "/aseries/:id" component = {Aseries} />
+        <Route path = "/movie/:id/:name" component = {Movie} />
+        <Route path = "/aseries/:id/:name" component = {Aseries} />
         <Route path = "/episode/:id" component = {Episode} />
       </Router>
       <InstallPromote />
