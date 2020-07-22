@@ -27,7 +27,7 @@ export default class Navbar extends Component {
                         p.username === null 
                         ?
                             <ul className="navbar-nav">
-                                <NavItem name="Signin" link="/login" icon="sign-in-alt" active={p.active}/>
+                                <NavItem name="Login" link="/login" icon="sign-in-alt" active={p.active}/>
                             </ul>
                         :
                             <ul className="navbar-nav">
