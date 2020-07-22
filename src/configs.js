@@ -6,4 +6,3 @@ export const CONFIGS = {
     GET_MOVIE_PATH: "",
     GET_VIDEO_LINKS_PATH: "",
 }
-console.log(process.env);
