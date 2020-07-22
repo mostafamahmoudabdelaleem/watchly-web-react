@@ -12,8 +12,8 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.state = {
-            allSeries: null,
-            movies: null,
+            allSeries: [],
+            movies: [],
             api_url: CONFIGS.BACKEND_API_URL + CONFIGS.ALL_SERIES_PATH,
             loaderIsHidden: false
         };
@@ -44,11 +44,29 @@ export default class Home extends Component {
                             <Jumbotron />
                             {this.state.allSeries || this.state.movies  ? 
                                 <div className="container">
-                                    <h2 className="fg-orange">
-                                        <i className="fas fa-film"></i> Recent:
-                                    </h2>
-                                    <div className="row">
-                                        <DisplayList list={this.state.allSeries} />
+                                    <div>
+                                        <h2 className="fg-orange">
+                                            <i className="fas fa-video"></i> Recent Movies:
+                                        </h2>
+                                        <div className="row">
+                                            <DisplayList 
+                                                list={this.state.movies} 
+                                                replace="series"
+                                                with="aseries"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h2 className="fg-orange">
+                                            <i className="fas fa-film"></i> Recent Series:
+                                        </h2>
+                                        <div className="row">
+                                            <DisplayList 
+                                                list={this.state.allSeries} 
+                                                replace="series"
+                                                with="aseries"
+                                            />
+                                        </div>
                                     </div>
                                 </div>
                             :
