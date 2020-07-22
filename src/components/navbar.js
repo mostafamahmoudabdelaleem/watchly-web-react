@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import NavItem from './navItem'
 
 export default class Navbar extends Component {
@@ -10,7 +11,7 @@ export default class Navbar extends Component {
         }
         return (
             <nav className="navbar navbar-expand-md navbar-light">
-                <a className="navbar-brand" href="/" style={{fontFamily: 'Pacifico', color: '#fff'}}>Watchly<span className="fas fa-play sm-logo"></span></a>
+                <Link className="navbar-brand" to="/" style={{fontFamily: 'Pacifico', color: '#fff'}}>Watchly<span className="fas fa-play sm-logo"></span></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="fas fa-bars"></span>
                 </button>

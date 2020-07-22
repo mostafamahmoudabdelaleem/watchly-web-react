@@ -149,7 +149,7 @@ body{
 
 .loader{
     position: relative;
-    top: 30%;
+    top: 40%;
     display: table;
     margin: 0 auto;
 }
@@ -167,4 +167,6 @@ body{
 
 .loader p{
     color: snow;
+    font-family: 'Pacifico';
+    margin-top: 8px;
 }
