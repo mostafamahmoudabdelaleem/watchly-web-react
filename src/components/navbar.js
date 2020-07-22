@@ -9,8 +9,9 @@ export default class Navbar extends Component {
             profilePic: this.props.profilePic,
             active: this.props.activeTab
         }
+
         return (
-            <nav className="navbar navbar-expand-md navbar-light">
+            <nav className="navbar navbar-expand-lg navbar-light">
                 <Link className="navbar-brand" to="/" style={{fontFamily: 'Pacifico', color: '#fff'}}>Watchly<span className="fas fa-play sm-logo"></span></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="fas fa-bars"></span>
@@ -21,19 +22,21 @@ export default class Navbar extends Component {
                         <NavItem name="Movies" link="/movies" icon="video" active={p.active}/>
                         <NavItem name="Series" link="/series" icon="film" active={p.active}/>
                     </ul>
-                    <ul className="navbar-nav my-2 my-lg-0">
-                        <NavItem name={p.username} link="/profile" imgUrl={p.profilePic} isImg="true" active={p.active}/>
-                        <NavItem name="Logout" link="/logout" icon="sign-out-alt" active={p.active}/>
-                    </ul>
+                    {
+                        typeof(p.username) === "undefined" 
+                        ?
+                            <ul className="navbar-nav">
+                                <NavItem name="Signin" link="/login" icon="sign-in-alt" active={p.active}/>
+                            </ul>
+                        :
+                            <ul className="navbar-nav">
+                                <NavItem name={p.username} link="/profile" imgUrl={p.profilePic} isImg="true" active={p.active}/>
+                                <NavItem name="Signout" link="/logout" icon="sign-out-alt" active={p.active}/>
+                            </ul>
+                    }
                 </div>
             
             </nav>
         )
     }
-}
-
-Navbar.defaultProps = {
-    username: "Mostafa",
-    profilePic: "https://watchly.000webhostapp.com/img/users-profile-picture/pic_4.jpg",
-    activeTab: "None"
 }
