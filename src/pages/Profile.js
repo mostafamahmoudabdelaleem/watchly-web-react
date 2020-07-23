@@ -36,7 +36,7 @@ export default class Profile extends Component {
                                             <li className="list-group-item"><b>Email: </b>{u.email}</li>
                                             <li className="list-group-item"><b>Auth Provider: </b>{u.provider}</li>
                                         </ul>
-                                        <h6 className="text-muted text-center mt-4"><i className="fas fa-info"></i>  This is all the data we know about you.</h6>
+                                        <h6 className="text-muted text-center mt-4"><i className="fas fa-info-circle"></i>  This is all the data we know about you.</h6>
                                     </div>
                                 </div>
                                 
