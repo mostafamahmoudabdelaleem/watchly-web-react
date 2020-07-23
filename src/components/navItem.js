@@ -16,17 +16,9 @@ export default class NavItem extends Component {
         return (
             (p.isImg ?
                 <li className={(p.isActive ? 'nav-item active' : 'nav-item')}>
-                    {
-                        p.imgUrl === 'null'
-                        ?
-                            <Link className="nav-link" to={p.link}>
-                                <i className="fas fa-user"></i> {p.name}
-                            </Link>
-                        :
-                            <Link className="nav-link for-img" to={p.link}>
-                                <img className="nav-img" src={p.imgUrl} alt={p.name}/> {p.name}
-                            </Link>
-                    }
+                    <Link className="nav-link for-img" to={p.link}>
+                        <img className="nav-img" src={p.imgUrl} alt={p.name}/> {p.name}
+                    </Link>
                 </li>
             :
                 <li className={(p.isActive ? 'nav-item active' : 'nav-item')}>

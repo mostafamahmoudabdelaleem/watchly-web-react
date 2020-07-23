@@ -20,7 +20,14 @@ export default class Login extends Component {
                 localStorage.setItem(CONFIGS.LOCAL_UUID_KEY, md5(signIn.email))
                 localStorage.setItem(CONFIGS.LOCAL_USER_EMAIL_KEY, signIn.email)
                 localStorage.setItem(CONFIGS.LOCAL_USER_NAME_KEY, signIn.name)
-                localStorage.setItem(CONFIGS.LOCAL_USER_PIC_KEY, signIn.imageUrl)
+                if(signIn.imageUrl === null){
+                    localStorage.setItem(
+                        CONFIGS.LOCAL_USER_PIC_KEY, 
+                        ('https://via.placeholder.com/300.webp/eee/999?text=' + signIn.name[0])
+                    )
+                }else{
+                    localStorage.setItem(CONFIGS.LOCAL_USER_PIC_KEY, signIn.imageUrl)
+                }
                 localStorage.setItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY, signIn.provider)
                 this.props.history.push("/")
             }
