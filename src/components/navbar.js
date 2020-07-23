@@ -5,6 +5,17 @@ import NavItem from './navItem'
 
 export default class Navbar extends Component {
 
+    constructor(props){
+        super(props);
+        let p = {
+            username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
+            profilePic: localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY),
+            active: this.props.activeTab
+        }
+        this.state = {
+            user: p
+        }
+    }
     
     logout = () => {
         localStorage.removeItem(CONFIGS.LOCAL_UUID_KEY)
@@ -13,16 +24,13 @@ export default class Navbar extends Component {
         localStorage.removeItem(CONFIGS.LOCAL_USER_PIC_KEY)
         localStorage.removeItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY)
         this.forceUpdate()
+        window.location = "/"
+
     }
     
     
     render() {
-        let p = {
-            username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
-            profilePic: localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY),
-            active: this.props.activeTab
-        }
-
+        let p = this.state.user
         return (
             <nav className="navbar navbar-expand-lg navbar-light">
                 <Link className="navbar-brand" to="/" style={{fontFamily: 'Pacifico', color: '#fff'}}>Watchly<span className="fas fa-play sm-logo"></span></Link>
