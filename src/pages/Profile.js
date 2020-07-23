@@ -26,6 +26,11 @@ export default class Profile extends Component {
             console.log(this.state.user.username)
             window.location = "/"
         }
+        
+    }
+
+    componentDidMount(){
+        document.title = `Watchly - ${this.state.user.username}'s profile`
     }
 
     render() {

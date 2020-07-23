@@ -8,6 +8,7 @@ export default class Login extends Component {
     constructor(props) {
         super(props);
         this.pwa_auth_ref = React.createRef();
+        document.title = `Watchly - Login`
     }
 
     componentDidMount(){

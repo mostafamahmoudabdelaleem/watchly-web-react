@@ -9,6 +9,8 @@ export default function Movie() {
     let { id, name } = useParams();
     let link = `https://eg4.akwam.net/movie/${id}/${name}`
 
+    document.title = `Watchly - ${name}`
+
     return (
         <div>
             <Navbar />
