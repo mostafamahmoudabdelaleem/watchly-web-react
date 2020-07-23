@@ -4,6 +4,18 @@ import { CONFIGS } from '../configs'
 import NavItem from './navItem'
 
 export default class Navbar extends Component {
+
+    
+    logout = () => {
+        localStorage.removeItem(CONFIGS.LOCAL_UUID_KEY)
+        localStorage.removeItem(CONFIGS.LOCAL_USER_EMAIL_KEY)
+        localStorage.removeItem(CONFIGS.LOCAL_USER_NAME_KEY)
+        localStorage.removeItem(CONFIGS.LOCAL_USER_PIC_KEY)
+        localStorage.removeItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY)
+        this.forceUpdate()
+    }
+    
+    
     render() {
         let p = {
             username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
@@ -32,7 +44,7 @@ export default class Navbar extends Component {
                         :
                             <ul className="navbar-nav">
                                 <NavItem name={p.username} link="/profile" imgUrl={p.profilePic} isImg="true" active={p.active}/>
-                                <NavItem name="Signout" link="/logout" icon="sign-out-alt" active={p.active}/>
+                                <NavItem type="button" callback={this.logout} name="Signout" icon="sign-out-alt" active={p.active} />
                             </ul>
                     }
                 </div>
