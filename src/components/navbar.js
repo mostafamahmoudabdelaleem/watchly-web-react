@@ -13,10 +13,13 @@ export default class Navbar extends Component {
             active: this.props.activeTab
         }
         this.state = {
-            user: p
+            p
         }
+        document.title = `Watchly - ${this.state.p.active}`
     }
     
+    
+
     logout = () => {
         localStorage.removeItem(CONFIGS.LOCAL_UUID_KEY)
         localStorage.removeItem(CONFIGS.LOCAL_USER_EMAIL_KEY)
@@ -30,7 +33,7 @@ export default class Navbar extends Component {
     
     
     render() {
-        let p = this.state.user
+        let p = this.state.p
         return (
             <nav className="navbar navbar-expand-lg navbar-light">
                 <Link className="navbar-brand" to="/" style={{fontFamily: 'Pacifico', color: '#fff'}}>Watchly<span className="fas fa-play sm-logo"></span></Link>
