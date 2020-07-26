@@ -26,7 +26,6 @@ export default class DisplayItem extends Component {
                             className="card-img display-list-img" 
                             alt={this.props.item.name}/>
                         <div className="card-img-overlay">
-                            <p className="card-title">{this.props.item.name}</p>
                             <QualityBadge quality={this.props.item.quality} />
                             <RatingBadge rating={this.props.item.rating} />
                         </div>
