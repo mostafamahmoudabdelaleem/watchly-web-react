@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { CONFIGS } from '../configs'
+import { getUser } from '../js/localStorage-utils'
+import { changeDocumentTitle } from '../js/seo-utils'
 import Navbar from '../components/navbar'
 import '../css/Components.css';
 import '../css/Components-media-575.css';
@@ -8,15 +9,8 @@ import '../css/Components-media-991.css';
 export default class Profile extends Component {
     constructor(props){
         super(props);
-        let u = {
-            username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
-            profilePic: localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY),
-            email: localStorage.getItem(CONFIGS.LOCAL_USER_EMAIL_KEY),
-            provider: localStorage.getItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY),
-            uuid: localStorage.getItem(CONFIGS.LOCAL_UUID_KEY)
-        }
         this.state = {
-            user: u
+            user: getUser()
         }
     }
 
@@ -30,7 +24,7 @@ export default class Profile extends Component {
     }
 
     componentDidMount(){
-        document.title = `Watchly - ${this.state.user.username}'s profile`
+        changeDocumentTitle(`${this.state.user.username.split(" ")[0]}'s profile`)
     }
 
     render() {

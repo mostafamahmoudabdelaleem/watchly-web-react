@@ -7,9 +7,10 @@ import './index.css';
 import 'bootstrap';
 import App from './App';
 
+if(process.env.NODE_ENV === "development"){
+    require('dotenv').config()
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
-
-console.log(process.env);
 
 serviceWorker.register();

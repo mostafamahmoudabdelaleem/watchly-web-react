@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import '@pwabuilder/pwaauth'
 import { CONFIGS } from '../configs'
+import { changeDocumentTitle } from '../js/seo-utils'
+import { userLogin } from '../js/localStorage-utils'
 
-var md5 = require('md5')
 
 export default class Login extends Component {
     constructor(props) {
         super(props);
         this.pwa_auth_ref = React.createRef();
-        document.title = `Watchly - Login`
+        changeDocumentTitle('Login')
     }
 
     componentDidMount(){
@@ -18,18 +19,7 @@ export default class Login extends Component {
             if (signIn.error) {
                 console.error("Sign in failed", signIn.error);
             } else {
-                localStorage.setItem(CONFIGS.LOCAL_UUID_KEY, md5(signIn.email))
-                localStorage.setItem(CONFIGS.LOCAL_USER_EMAIL_KEY, signIn.email)
-                localStorage.setItem(CONFIGS.LOCAL_USER_NAME_KEY, signIn.name)
-                if(signIn.imageUrl === null){
-                    localStorage.setItem(
-                        CONFIGS.LOCAL_USER_PIC_KEY, 
-                        ('https://via.placeholder.com/300.webp/eee/999?text=' + signIn.name[0])
-                    )
-                }else{
-                    localStorage.setItem(CONFIGS.LOCAL_USER_PIC_KEY, signIn.imageUrl)
-                }
-                localStorage.setItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY, signIn.provider)
+                userLogin(signIn)
                 this.props.history.push("/")
             }
         });

@@ -8,7 +8,8 @@ import Episode from './pages/Episode'
 import Series from './pages/Series'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
-import Register from './pages/Register'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfServices from './pages/TermsOfServices'
 import InstallPromote from './components/install_promote';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Route path = "/series" component = {Series} />
         <Route path = "/profile" component = {Profile} />
         <Route path = "/login" component = {Login} />
-        <Route path = "/register" component = {Register} />
+        <Route path = "/privacy-policy" component = {PrivacyPolicy} />
+        <Route path = "/terms-of-services" component = {TermsOfServices} />
         <Route path = "/movie/:id/:name" component = {Movie} />
         <Route path = "/aseries/:id/:name" component = {Aseries} />
         <Route path = "/episode/:id" component = {Episode} />
