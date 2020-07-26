@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { CONFIGS } from '../configs'
+import { changeDocumentTitle } from '../js/seo-utils'
+import { userLogout, getUsername, getUserPicture } from '../js/localStorage-utils'
 import NavItem from './navItem'
 
 export default class Navbar extends Component {
@@ -8,24 +9,20 @@ export default class Navbar extends Component {
     constructor(props){
         super(props);
         let p = {
-            username: localStorage.getItem(CONFIGS.LOCAL_USER_NAME_KEY),
-            profilePic: localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY),
+            username: getUsername(),
+            profilePic: getUserPicture(),
             active: this.props.activeTab
         }
         this.state = {
             p
         }
-        document.title = `Watchly - ${this.state.p.active}`
+        changeDocumentTitle(this.state.p.active);
     }
     
     
 
     logout = () => {
-        localStorage.removeItem(CONFIGS.LOCAL_UUID_KEY)
-        localStorage.removeItem(CONFIGS.LOCAL_USER_EMAIL_KEY)
-        localStorage.removeItem(CONFIGS.LOCAL_USER_NAME_KEY)
-        localStorage.removeItem(CONFIGS.LOCAL_USER_PIC_KEY)
-        localStorage.removeItem(CONFIGS.LOCAL_USER_AUTH_PROVIDER_KEY)
+        userLogout()
         this.forceUpdate()
         window.location = "/"
 

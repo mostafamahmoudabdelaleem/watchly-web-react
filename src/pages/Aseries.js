@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import { CONFIGS } from '../configs'
+import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
 import Navbar from '../components/navbar'
 import '../css/Components.css';
 import '../css/Components-media-575.css';
@@ -14,14 +15,9 @@ export default function Aseries() {
     
 
     useEffect(() => {
-        document.title = `Watchly - ${name}`;
-        document.getElementById('ogUrl').setAttribute("content", window.location);
-        document.getElementById('ogTitle').setAttribute("content", document.title);
-        document.getElementById('twitterTitle').setAttribute("content", document.title);
-        document.getElementById('ogImage').setAttribute("content", s.img_link);
-        document.getElementById('twitterImage').setAttribute("content", s.img_link);
-        document.getElementById('twitterImageAlt').setAttribute("content", document.title);
-        return;
+        changeDocumentTitle(name);
+        changeMetaImg(s.img_link);
+        changeMetaURL(window.location);
     })
     
 

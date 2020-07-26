@@ -1,5 +1,6 @@
 import React from 'react'
-import { useParams } from "react-router-dom";  
+import { useParams } from "react-router-dom";
+import { changeDocumentTitle } from '../js/seo-utils'
 import Navbar from '../components/navbar'
 import '../css/Components.css';
 import '../css/Components-media-575.css';
@@ -9,7 +10,7 @@ export default function Movie() {
     let { id, name } = useParams();
     let link = `https://eg4.akwam.net/movie/${id}/${name}`
 
-    document.title = `Watchly - ${name}`
+    changeDocumentTitle(name);
 
     return (
         <div>
