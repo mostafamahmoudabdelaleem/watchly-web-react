@@ -5,9 +5,3 @@
 [context.production]
   publish = "build/"
   command = "node server.js"
-
-[build.environment]
-  BACKEND_API_URL =  ${BACKEND_API_URL}
-  
-[context.production.environment]
-  BACKEND_API_URL =  ${BACKEND_API_URL}
