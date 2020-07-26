@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { CONFIGS } from '../configs'
+import { fetchSeries } from '../js/api-utils'
 import Navbar from '../components/navbar'
 import Jumbotron from '../components/jumbotron'
 import DisplayList from '../components/displayList'
@@ -13,42 +14,21 @@ export default class Series extends Component {
     constructor(props){
         super(props);
         this.state = {
-            allSeries: null,
-            api_url: CONFIGS.BACKEND_API_URL + CONFIGS.ALL_SERIES_PATH,
+            allSeries: [],
             loaderIsHidden: false,
             currentPage: 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT
         };
     }
     componentDidMount(){
-        let localSeries = JSON.parse(localStorage.getItem(CONFIGS.LOCAL_SERIES_KEY))
-        let localSeriesTS = parseInt(localStorage.getItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY))
-        
-        let cond1 = (((Math.floor(Date.now() / 1000)) - localSeriesTS) > CONFIGS.LOCAL_CACHE_INTERVAL)
-        let cond2 = (localSeries === null || localSeriesTS === null)
-
-        if(cond1 || cond2){
-            this.fetchSeries();
-        }
-        this.setState({
-            allSeries: localSeries,
-            loaderIsHidden: true
-        })
+        fetchSeries(this.updateState)
     }
 
-    fetchSeries = () => {
-        console.log('start fetch')
-        fetch("https://cors-anywhere.herokuapp.com/"+this.state.api_url)
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-                allSeries: data,
-                loaderIsHidden:true
-            })
-            console.log('start end')
-            localStorage.setItem(CONFIGS.LOCAL_SERIES_KEY, JSON.stringify(data))
-            localStorage.setItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY, (Math.floor(Date.now() / 1000)).toString())
-        }).catch(err => console.log(err))
+    updateState = (data) => {
+        this.setState({
+            allSeries: data,
+            loaderIsHidden:true
+        })
     }
 
     changePage = (i) => {
