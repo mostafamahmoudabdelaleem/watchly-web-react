@@ -1,6 +1,6 @@
 export const CONFIGS = {
     // backend API configs
-    BACKEND_API_URL: process.env.BACKEND_API_URL || "https://watchly-api.herokuapp.com/api/v1",
+    BACKEND_API_URL: process.env.REACT_APP_BACKEND_API_URL,
     ALL_SERIES_PATH: "/all_series",
     ALL_MOVIES_PATH: "",
     GET_SERIES_PATH: "",
@@ -19,8 +19,8 @@ export const CONFIGS = {
     LOCAL_USER_EMAIL_KEY: "uemail",
     LOCAL_USER_AUTH_PROVIDER_KEY: "uprovider",
     // signin PWA-Auth key
-    MICROSOFT_KEY: "9de0cbd2-a874-420f-aa5e-de5550766799",
-    GOOGLE_KEY: "896772888299-6ngsuchb4gg5pulom75hpaf9hhucepqq.apps.googleusercontent.com",
-    FACEBOOK_KEY: "324478608958999",
-    APPLE_KEY: ""
+    MICROSOFT_KEY: process.env.REACT_APP_MICROSOFT_KEY || "",
+    GOOGLE_KEY: process.env.REACT_APP_GOOGLE_KEY || "",
+    FACEBOOK_KEY: process.env.REACT_APP_FACEBOOK_KEY || "",
+    APPLE_KEY: process.env.REACT_APP_APPLE_KEY || ""
 }
