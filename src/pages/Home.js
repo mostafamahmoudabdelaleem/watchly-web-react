@@ -95,7 +95,7 @@ export default class Home extends Component {
                                         </h2>
                                         <div className="row">
                                             <DisplayList 
-                                                list={this.state.allSeries} 
+                                                list={this.state.allSeries.slice(0,12)} 
                                                 replace="series"
                                                 with="aseries"
                                             />

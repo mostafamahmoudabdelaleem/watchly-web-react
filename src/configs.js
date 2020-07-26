@@ -22,5 +22,7 @@ export const CONFIGS = {
     MICROSOFT_KEY: process.env.REACT_APP_MICROSOFT_KEY || "",
     GOOGLE_KEY: process.env.REACT_APP_GOOGLE_KEY || "",
     FACEBOOK_KEY: process.env.REACT_APP_FACEBOOK_KEY || "",
-    APPLE_KEY: process.env.REACT_APP_APPLE_KEY || ""
+    APPLE_KEY: process.env.REACT_APP_APPLE_KEY || "",
+    // Pagination configs
+    PAGINATION_PAGE_LIMIT: 24
 }

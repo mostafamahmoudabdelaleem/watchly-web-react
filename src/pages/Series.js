@@ -4,6 +4,7 @@ import Navbar from '../components/navbar'
 import Jumbotron from '../components/jumbotron'
 import DisplayList from '../components/displayList'
 import Loader from '../components/loader'
+import Pagination from '../components/pagination'
 import '../css/Components.css';
 import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
@@ -14,7 +15,9 @@ export default class Series extends Component {
         this.state = {
             allSeries: null,
             api_url: CONFIGS.BACKEND_API_URL + CONFIGS.ALL_SERIES_PATH,
-            loaderIsHidden: false
+            loaderIsHidden: false,
+            currentPage: 1,
+            pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT
         };
     }
     componentDidMount(){
@@ -48,7 +51,17 @@ export default class Series extends Component {
         }).catch(err => console.log(err))
     }
 
+    changePage = (i) => {
+        this.setState({
+            currentPage: i
+        })
+    }
+
     render() {
+        let p = this.state.currentPage;
+        let start = (p-1) * this.state.pageLimit;
+        let end = p * this.state.pageLimit;
+        
         return (
             <React.Fragment>
                 {
@@ -57,17 +70,25 @@ export default class Series extends Component {
                         <React.Fragment>
                             <Navbar activeTab="Series"/>
                             <Jumbotron />
-                            {this.state.allSeries ? 
+                            {this.state.allSeries
+                            ? 
                                 <div className="container">
                                     <h2 className="fg-orange">
                                         <i className="fas fa-film"></i> Recent Series:
                                     </h2>
                                     <div className="row">
                                         <DisplayList 
-                                            list={this.state.allSeries} 
+                                            list={this.state.allSeries.slice(start, end)} 
                                             replace="series"
                                             with="aseries"
                                         />
+                                        <div className="col-12 mt-4">
+                                            <Pagination 
+                                                activePage={this.state.currentPage}
+                                                length={this.state.allSeries.length}
+                                                pageLimit={this.state.pageLimit}
+                                                callback={this.changePage}/>
+                                        </div>
                                     </div>
                                 </div>
                             :
