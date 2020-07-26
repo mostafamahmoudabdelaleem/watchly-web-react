@@ -4,4 +4,4 @@
 
 [context.production]
   publish = "build/"
-  command = "pm2 start server.js"
+  command = "nohub node server.js & exit"
