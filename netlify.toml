@@ -1,3 +1,0 @@
-[context.production]
-  publish = "build/"
-  command = "npm run build & nohub node server.js & exit"
