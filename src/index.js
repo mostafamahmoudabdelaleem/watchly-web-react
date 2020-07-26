@@ -10,5 +10,6 @@ import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
+console.log(process.env);
 
 serviceWorker.register();
