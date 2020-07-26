@@ -29,7 +29,7 @@ export const fetchSeries = (callback) => {
 
 export const fetchMovies = (callback) => {
     console.log('start fetch')
-    let url = 'https://cors-anywhere.herokuapp.com/' + CONFIGS.BACKEND_API_URL + CONFIGS.ALL_SERIES_PATH;
+    //let url = 'https://cors-anywhere.herokuapp.com/' + CONFIGS.BACKEND_API_URL + CONFIGS.ALL_SERIES_PATH;
 
 
     let localMovies = JSON.parse(localStorage.getItem(CONFIGS.LOCAL_MOVIES_KEY))
