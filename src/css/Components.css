@@ -170,3 +170,12 @@ body{
     font-family: 'Pacifico';
     margin-top: 8px;
 }
+
+.page-item.active .page-link{
+    background-color: #f4511e;
+    border-color: #f4511e;
+}
+
+.page-link ,  .page-link:hover{
+    color: #f4511e;
+}
