@@ -64,3 +64,15 @@ export const fetchSingleSeries = (link, callback) => {
         callback(data)
     }).catch(err => console.log(err))
 }
+
+
+export const fetchEpisodeLinks = (link, callback) => {
+    let baseUrl = `${CONFIGS.BACKEND_API_URL}${CONFIGS.GET_VIDEO_LINKS_PATH}?link=${link}`
+    console.log(baseUrl)
+    let url = 'https://cors-anywhere.herokuapp.com/' + baseUrl
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        callback(data)
+    }).catch(err => console.log(err))
+}
