@@ -59,6 +59,7 @@ export default class Series extends Component {
                                             list={this.state.allSeries.slice(start, end)} 
                                             replace="series"
                                             with="aseries"
+                                            isSeries="series"
                                         />
                                         <div className="col-12 mt-4">
                                             <Pagination 
