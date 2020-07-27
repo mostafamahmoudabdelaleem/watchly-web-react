@@ -54,6 +54,7 @@ export default class Home extends Component {
                                                 list={this.state.movies.slice(0,12)} 
                                                 replace="series"
                                                 with="aseries"
+                                                isSeries="series"
                                             />
                                         </div>
                                     </div>
@@ -66,6 +67,7 @@ export default class Home extends Component {
                                                 list={this.state.allSeries.slice(0,12)} 
                                                 replace="series"
                                                 with="aseries"
+                                                isSeries="series"
                                             />
                                         </div>
                                     </div>
