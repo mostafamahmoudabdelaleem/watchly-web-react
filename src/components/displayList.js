@@ -27,6 +27,7 @@ export default class DisplayList extends Component {
                                 key={i}
                                 replace={this.props.replace}
                                 with={this.props.with}
+                                isSeries={this.props.isSeries}
                             />
                         )
                     })

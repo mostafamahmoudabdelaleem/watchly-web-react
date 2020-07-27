@@ -135,9 +135,10 @@ body{
 }
 
 .card-title{
-    margin-bottom: .75rem;
-    margin-top: 8px;
-    text-align: center;
+    margin-bottom: 0;
+    bottom: 0px;
+    left: 5px;
+    position: absolute;
 }
 
 .loader-container{
