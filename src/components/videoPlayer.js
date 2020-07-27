@@ -4,7 +4,10 @@ export default class VideoPlayer extends Component {
     
     render() {
 
-        if(typeof(this.props.links["480p"]) === "undefined"){
+        if(
+            typeof(this.props.links["480p"]) === "undefined" && 
+            typeof(this.props.links["720p"]) === "undefined" &&
+            typeof(this.props.links["1080p"]) === "undefined"){
             window.history.back()
         }
         return (
