@@ -21,13 +21,11 @@ export default class Series extends Component {
         };
     }
     componentDidMount(){
-        fetchSeries(this.updateState)
-    }
-
-    updateState = (data) => {
-        this.setState({
-            allSeries: data,
-            loaderIsHidden:true
+        fetchSeries((data) => {
+            this.setState({
+                allSeries: data,
+                loaderIsHidden:true
+            })
         })
     }
 

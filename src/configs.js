@@ -2,10 +2,10 @@ export const CONFIGS = {
     // backend API configs
     BACKEND_API_URL: process.env.REACT_APP_BACKEND_API_URL,
     ALL_SERIES_PATH: "/all_series",
-    ALL_MOVIES_PATH: "",
-    GET_SERIES_PATH: "",
-    GET_MOVIE_PATH: "",
-    GET_VIDEO_LINKS_PATH: "",
+    ALL_MOVIES_PATH: "/all_movies",
+    GET_SERIES_PATH: "/series",
+    GET_MOVIE_PATH: "/movies",
+    GET_VIDEO_LINKS_PATH: "/episode",
     // localstorage keys configs
     LOCAL_MOVIES_KEY: "movies",
     LOCAL_MOVIES_TIMESTAMP_KEY: "movies_ts",

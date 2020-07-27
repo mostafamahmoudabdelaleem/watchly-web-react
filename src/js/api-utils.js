@@ -52,3 +52,15 @@ export const fetchMovies = (callback) => {
         callback(localMovies)
     }  
 }
+
+
+export const fetchSingleSeries = (link, callback) => {
+    let baseUrl = `${CONFIGS.BACKEND_API_URL}${CONFIGS.GET_SERIES_PATH}?link=${link}`
+    console.log(baseUrl)
+    let url = 'https://cors-anywhere.herokuapp.com/' + baseUrl
+    fetch(url)
+    .then(res => res.json())
+    .then(data => {
+        callback(data)
+    }).catch(err => console.log(err))
+}
