@@ -3,7 +3,7 @@ import PageItem from './pageItem'
 
 export default class Pagination extends Component {
     render() {
-        let numPages = Math.round(parseInt(this.props.length) / parseInt(this.props.pageLimit));
+        let numPages = Math.ceil(parseInt(this.props.length) / parseInt(this.props.pageLimit));
         let pages = [];
         for(let i=0; i<numPages; i++){
             pages.push(i+1)
