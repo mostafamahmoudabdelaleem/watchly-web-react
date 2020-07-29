@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo-utils'
-import { fetchEpisodeLinks } from '../js/api-utils'
+import { fetchVideoLinks } from '../js/api-utils'
 import Navbar from '../components/navbar'
 import Loader from '../components/loader'
 import VideoPlayer from '../components/videoPlayer'
@@ -23,7 +23,7 @@ export default class Episode extends Component {
 
     componentDidMount(){
         let link = `https://eg4.akwam.net/episode/${this.state.id}`;
-        fetchEpisodeLinks(link, (data) => {
+        fetchVideoLinks(link, (data) => {
             this.setState({
                 links: data,
                 loaderIsHidden: true
