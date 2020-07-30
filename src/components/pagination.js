@@ -10,6 +10,9 @@ export default class Pagination extends Component {
             if(this.props.activePage > 7){
                 start = (this.props.activePage - 5)
                 end = (this.props.activePage + 5)
+                if(end > numPages){
+                    end = numPages
+                }
             }
         }else{
             end = numPages

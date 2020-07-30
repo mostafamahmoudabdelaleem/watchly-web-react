@@ -41,7 +41,8 @@ export default class Series extends Component {
     search = (e) => {
         console.log(e.target.value)
         this.setState({
-            query: e.target.value
+            query: e.target.value,
+            currentPage: 1
         })
     }
 
