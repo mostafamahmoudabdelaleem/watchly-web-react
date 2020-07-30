@@ -15,8 +15,7 @@ export default class Profile extends Component {
         }
     }
 
-    componentWillMount(){
-        console.log(this.state.user.username)
+    UNSAFE_componentWillMount(){
         if(this.state.user.username === null){
             console.log(this.state.user.username)
             window.location = "/"
@@ -33,7 +32,7 @@ export default class Profile extends Component {
 
         return (
             <div>
-                <Navbar activeTab="Mostafa"/>
+                <Navbar activeTab={u.username}/>
                 <div className="container">
                     <div className="row mt-4 mb-4">
                         <div className="col-12 col-sm-10 offset-sm-1">
@@ -63,7 +62,7 @@ export default class Profile extends Component {
                         </div>
                     </div>
                 </div>
-                <Footer sticky="true"/>
+                <Footer />
             </div>
         )
     }
