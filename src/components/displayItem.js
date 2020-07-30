@@ -16,7 +16,6 @@ export default class DisplayItem extends Component {
 
     render() {
         let isSeries = Boolean(this.props.isSeries === "series");
-        console.log(isSeries)
         return (
             <React.Fragment>
                 <div className="col-6 col-sm-4 col-md-3 col-lg-2 display-list-item">
