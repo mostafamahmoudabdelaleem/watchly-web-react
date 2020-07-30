@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo-utils'
 import { fetchVideoLinks } from '../js/api-utils'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import Loader from '../components/loader'
 import VideoPlayer from '../components/videoPlayer'
 import '../css/Components.css';
@@ -48,6 +49,7 @@ export default class Episode extends Component {
                                     <VideoPlayer links={this.state.links} />
                                 </div>
                             </div>
+                            <Footer />
                         </React.Fragment>
                     :
                         <Loader />

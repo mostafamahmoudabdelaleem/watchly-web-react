@@ -3,6 +3,7 @@ import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo
 import { fetchSingleSeries } from '../js/api-utils'
 import { CONFIGS } from '../configs'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import Loader from '../components/loader'
 import DisplayList from '../components/displayList'
 import Jumbotron from '../components/jumbotron'
@@ -82,6 +83,7 @@ export default class Aseries extends Component {
                             :
                                 <p className="text-center">No Episodes Found</p>
                         }
+                        <Footer />
                     </React.Fragment>
                 :
                     <Loader />
