@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import '@pwabuilder/pwaauth'
 import { CONFIGS } from '../configs'
 import { changeDocumentTitle } from '../js/seo-utils'
@@ -47,6 +48,14 @@ export default class Login extends Component {
                                 applekey={CONFIGS.APPLE_KEY}
                                 credentialmode="silent">
                             </pwa-auth>
+                            <hr/>
+                            <p 
+                                className="text-muted text-center font-weight-light"
+                                style={{marginBottom: "0", fontSize: "12px"}}
+                            >
+                                By signing in you are agreed to our <Link to="/privacy-policy">Privacy Policy</Link> and&nbsp;
+                                <Link to="/terms-of-services">Terms of service</Link>.
+                            </p>
                         </div>
                     </div>
                 </div>

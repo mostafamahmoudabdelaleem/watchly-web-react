@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { CONFIGS } from '../configs'
 import { fetchSeries, fetchMovies } from '../js/api-utils'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import Jumbotron from '../components/jumbotron'
 import DisplayList from '../components/displayList'
 import Loader from '../components/loader'
@@ -75,6 +76,7 @@ export default class Home extends Component {
                             :
                                 <p className="text-center">No Series Found</p>
                             }
+                            <Footer />
                         </React.Fragment>
                     :
                         <Loader />

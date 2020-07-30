@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getUser } from '../js/localStorage-utils'
 import { changeDocumentTitle } from '../js/seo-utils'
 import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 import '../css/Components.css';
 import '../css/Components-media-575.css';
 import '../css/Components-media-991.css';
@@ -34,7 +35,7 @@ export default class Profile extends Component {
             <div>
                 <Navbar activeTab="Mostafa"/>
                 <div className="container">
-                    <div className="row mt-4">
+                    <div className="row mt-4 mb-4">
                         <div className="col-12 col-sm-10 offset-sm-1">
                             <div className="card">
                                 <div className="card-header fg-orange">
@@ -50,7 +51,6 @@ export default class Profile extends Component {
                                     </div>
                                     <div className="col-12 col-md-8">
                                         <ul className="list-group list-group-flush">
-                                            <li className="list-group-item"><b>ID: </b>{u.uuid}</li>
                                             <li className="list-group-item"><b>Name: </b>{u.username}</li>
                                             <li className="list-group-item"><b>Email: </b>{u.email}</li>
                                             <li className="list-group-item"><b>Auth Provider: </b>{u.provider}</li>
@@ -63,6 +63,7 @@ export default class Profile extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer sticky="true"/>
             </div>
         )
     }
