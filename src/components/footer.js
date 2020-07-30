@@ -16,6 +16,7 @@ export default class Footer extends Component {
             html.clientHeight, html.scrollHeight, html.offsetHeight );
 
         if(height <= window.innerHeight){
+            console.log(height <= window.innerHeight)
             this.setState({
                 className: "container-fluid text-center footer footer-sticky"
             })
