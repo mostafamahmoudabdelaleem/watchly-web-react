@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo-utils'
+import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
 import { fetchVideoLinks } from '../js/api-utils'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -14,10 +14,12 @@ export default class Episode extends Component {
     constructor(props){
         super(props);
         const { id } = this.props.match.params
+        const { data } = this.props.location.state
         this.state = {
             links: null,
             loaderIsHidden: false,
             id,
+            data
         }
     }
 
@@ -29,8 +31,8 @@ export default class Episode extends Component {
                 links: data,
                 loaderIsHidden: true
             })
-            changeDocumentTitle('Episode');
-            //changeMetaImg(s.img_link);
+            changeDocumentTitle(this.state.data.title);
+            changeMetaImg(this.state.data.thumbnail);
             changeMetaURL(window.location);
         })
     }
@@ -46,7 +48,7 @@ export default class Episode extends Component {
                             <Navbar />
                             <div className="container">
                                 <div className="row">
-                                    <VideoPlayer links={this.state.links} />
+                                    <VideoPlayer links={this.state.links} poster={this.state.data.thumbnail} />
                                 </div>
                             </div>
                             <Footer />
