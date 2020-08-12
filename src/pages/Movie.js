@@ -14,11 +14,13 @@ export default class Movie extends Component {
     constructor(props){
         super(props);
         const { id, name } = this.props.match.params
+        const { data } = this.props.location.state
         this.state = {
             links: null,
             loaderIsHidden: false,
             id,
-            name
+            name,
+            data
         }
     }
 
@@ -47,7 +49,7 @@ export default class Movie extends Component {
                             <Navbar />
                             <div className="container">
                                 <div className="row">
-                                    <VideoPlayer links={this.state.links} />
+                                    <VideoPlayer links={this.state.links} poster={this.state.data.img_link} />
                                 </div>
                             </div>
                             <Footer />

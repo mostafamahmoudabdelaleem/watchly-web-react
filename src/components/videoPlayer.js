@@ -8,7 +8,7 @@ export default class VideoPlayer extends Component {
     
     componentDidMount(){
         this.player = videojs(this.videoNode, this.props, function onPlayerReady() {
-            console.log('onPlayerReady', this)
+            console.log('onPlayerReady')
         });
     }
 

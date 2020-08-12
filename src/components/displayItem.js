@@ -24,7 +24,12 @@ export default class DisplayItem extends Component {
                         ?
                             <Link 
                                 className="card bg-light text-white display-list-card"
-                                to={this.generateLink(this.props.item.link)}>
+                                to={{
+                                    pathname: this.generateLink(this.props.item.link),
+                                    state:{
+                                        data: this.props.item
+                                    }
+                                }}>
                                 <img 
                                     src={this.props.item.img_link} 
                                     className="card-img display-list-img" 
@@ -38,7 +43,12 @@ export default class DisplayItem extends Component {
                         :
                             <Link 
                                 className="card bg-light text-white display-list-card"
-                                to={this.generateLink(this.props.item.link)}>
+                                to={{
+                                    pathname: this.generateLink(this.props.item.link),
+                                    state:{
+                                        data: this.props.item
+                                    }
+                                }}>
                                 <img 
                                     src={this.props.item.thumbnail} 
                                     className="card-img display-list-img" 
