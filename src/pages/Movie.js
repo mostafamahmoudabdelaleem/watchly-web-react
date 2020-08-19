@@ -35,6 +35,9 @@ export default class Movie extends Component {
                 links: data,
                 loaderIsHidden: true
             })
+            changeDocumentTitle(this.state.name);
+            changeMetaImg(this.state.data.img_link);
+            changeMetaURL(window.location);
         })
     }
 

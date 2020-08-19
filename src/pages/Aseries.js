@@ -39,6 +39,9 @@ export default class Aseries extends Component {
                 series: data,
                 loaderIsHidden: true
             })
+            changeDocumentTitle(this.state.name);
+            changeMetaImg(this.state.data.img_link);
+            changeMetaURL(window.location);
         })
     }
 
