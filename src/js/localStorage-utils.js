@@ -43,3 +43,31 @@ export const getUsername = () => {
 export const getUserPicture = () => {
     return localStorage.getItem(CONFIGS.LOCAL_USER_PIC_KEY);
 }
+
+export const getLocalMovies = () => {
+    return JSON.parse(localStorage.getItem(CONFIGS.LOCAL_MOVIES_KEY))
+}
+
+export const getLocalMoviesTS = () => {
+    return parseInt(localStorage.getItem(CONFIGS.LOCAL_MOVIES_TIMESTAMP_KEY))
+}
+
+export const getLocalSeries = () => {
+    return JSON.parse(localStorage.getItem(CONFIGS.LOCAL_SERIES_KEY))
+}
+
+export const getLocalSeriesTS = () => {
+    return parseInt(localStorage.getItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY))
+}
+
+export const getSeriesByID = (id) => {
+    let series = getLocalSeries();
+    let item = series.find((val) => val.link.includes(id))
+    return item
+}
+
+export const getMoviesByID = (id) => {
+    let movies = getLocalMovies();
+    let item = movies.find((val) => val.link.includes(id))
+    return item
+}
