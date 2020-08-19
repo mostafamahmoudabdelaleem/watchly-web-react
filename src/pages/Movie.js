@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
+import { getMoviesByID } from '../js/localStorage-utils'
 import { fetchVideoLinks } from '../js/api-utils'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -14,7 +15,7 @@ export default class Movie extends Component {
     constructor(props){
         super(props);
         const { id, name } = this.props.match.params
-        const { data } = this.props.location.state
+        const data = getMoviesByID(`${id}/${name}`)
         this.state = {
             links: null,
             loaderIsHidden: false,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
 import { fetchSingleSeries } from '../js/api-utils'
+import { getSeriesByID } from '../js/localStorage-utils'
 import { CONFIGS } from '../configs'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -17,7 +18,7 @@ export default class Aseries extends Component {
     constructor(props){
         super(props);
         const { id, name, page } = this.props.match.params
-        const { data } = this.props.location.state
+        const data = getSeriesByID(`${id}/${name}`)
         this.state = {
             series: null,
             loaderIsHidden: false,
