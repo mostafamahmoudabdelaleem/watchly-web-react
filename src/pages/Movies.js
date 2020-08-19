@@ -15,16 +15,11 @@ export default class Series extends Component {
     constructor(props){
         super(props);
         let { page } = this.props.match.params
-        console.log()
-        if(typeof(page) === undefined){
-            page = 1
-        }else{
-            page = parseInt(page)
-        }
+
         this.state = {
             movies: null,
             loaderIsHidden: false,
-            currentPage: page,
+            currentPage: parseInt(page) || 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT,
             query: ""
         };
