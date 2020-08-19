@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {version} from '../../package.json';
 
 export default class Footer extends Component {
     constructor(props){
@@ -27,7 +28,7 @@ export default class Footer extends Component {
 
         return (
             <footer className={ this.state.className }>
-                <p>Copyright © 2020 Watchly - All Rights Reserved.</p>
+                <p>Copyright © 2020 Watchly - All Rights Reserved - Current version: {version}</p>
             </footer>
         )
     }
