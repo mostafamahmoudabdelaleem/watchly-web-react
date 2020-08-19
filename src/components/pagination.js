@@ -31,7 +31,8 @@ export default class Pagination extends Component {
                                 key={i}
                                 activePage={this.props.activePage} 
                                 pageNum={num}
-                                callback={this.props.callback}/>
+                                callback={this.props.callback}
+                                path={this.props.path} />
                         )
                     })
                 }

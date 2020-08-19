@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class PageItem extends Component {
     
@@ -9,9 +10,10 @@ export default class PageItem extends Component {
 
     render() {
         let isActive = Boolean(this.props.activePage === this.props.pageNum)
+        let url = `/${this.props.path}/page/${this.props.pageNum}`
         return (
             <li className={isActive ? "page-item active" : "page-item"}>
-                <button className="page-link" aria-current="page" onClick={this.onClick}>{this.props.pageNum}</button>
+                <Link to={url} className="page-link" aria-current="page" onClick={this.onClick}>{this.props.pageNum}</Link>
             </li>
         )
     }

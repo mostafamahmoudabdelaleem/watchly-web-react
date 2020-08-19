@@ -101,7 +101,8 @@ export default class Series extends Component {
                                                 activePage={this.state.currentPage}
                                                 length={list.length}
                                                 pageLimit={this.state.pageLimit}
-                                                callback={this.changePage}/>
+                                                callback={this.changePage}
+                                                path="series" />
                                         </div>
                                     </div>
                                 </div>
