@@ -28,7 +28,7 @@ export default class Footer extends Component {
 
         return (
             <footer className={ this.state.className }>
-                <p>Copyright © 2020 Watchly - All Rights Reserved - v: {version}</p>
+                <p>Copyright © 2020 Watchly - All Rights Reserved - v{version}</p>
             </footer>
         )
     }
