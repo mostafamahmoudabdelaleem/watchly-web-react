@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo-utils'
+import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
 import { fetchVideoLinks } from '../js/api-utils'
 import Navbar from '../components/navbar'
 import Footer from '../components/footer'
@@ -33,7 +33,7 @@ export default class Movie extends Component {
                 loaderIsHidden: true
             })
             changeDocumentTitle(this.state.name);
-            //changeMetaImg(s.img_link);
+            changeMetaImg(this.state.data.img_link);
             changeMetaURL(window.location);
         })
     }
