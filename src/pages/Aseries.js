@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { changeDocumentTitle, /*changeMetaImg,*/ changeMetaURL } from '../js/seo-utils'
+import { changeDocumentTitle, changeMetaImg, changeMetaURL } from '../js/seo-utils'
 import { fetchSingleSeries } from '../js/api-utils'
 import { CONFIGS } from '../configs'
 import Navbar from '../components/navbar'
@@ -17,11 +17,13 @@ export default class Aseries extends Component {
     constructor(props){
         super(props);
         const { id, name, page } = this.props.match.params
+        const { data } = this.props.location.state
         this.state = {
             series: null,
             loaderIsHidden: false,
             id,
             name,
+            data,
             currentPage: parseInt(page) || 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT
         }
@@ -35,7 +37,7 @@ export default class Aseries extends Component {
                 loaderIsHidden: true
             })
             changeDocumentTitle(this.state.name);
-            //changeMetaImg(s.img_link);
+            changeMetaImg(this.state.data.img_link);
             changeMetaURL(window.location);
         })
     }
