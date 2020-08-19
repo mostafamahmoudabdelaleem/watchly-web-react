@@ -17,17 +17,23 @@ function App() {
     <React.Fragment>
       <Router>
         <Route exact path = "/" component = {Home} />
+
         <Route exact path = "/movies" component = {Movies} />
         <Route path = "/movies/page/:page" component = {Movies} />
+        <Route path = "/movie/:id/:name" component = {Movie} />
+
         <Route exact path = "/series" component = {Series} />
         <Route path = "/series/page/:page" component = {Series} />
+        <Route exact path = "/aseries/:id/:name" component = {Aseries} />
+        <Route path = "/aseries/:id/:name/page/:page" component = {Aseries} />
+        <Route path = "/episode/:id" component = {Episode} />
+
         <Route path = "/profile" component = {Profile} />
         <Route path = "/login" component = {Login} />
+        
         <Route path = "/privacy-policy" component = {PrivacyPolicy} />
         <Route path = "/terms-of-services" component = {TermsOfServices} />
-        <Route path = "/movie/:id/:name" component = {Movie} />
-        <Route path = "/aseries/:id/:name" component = {Aseries} />
-        <Route path = "/episode/:id" component = {Episode} />
+        
       </Router>
       <InstallPromote />
     </React.Fragment>

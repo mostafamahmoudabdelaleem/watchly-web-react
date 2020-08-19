@@ -16,13 +16,13 @@ export default class Aseries extends Component {
 
     constructor(props){
         super(props);
-        const { id, name } = this.props.match.params
+        const { id, name, page } = this.props.match.params
         this.state = {
             series: null,
             loaderIsHidden: false,
             id,
             name,
-            currentPage: 1,
+            currentPage: parseInt(page) || 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT
         }
     }
@@ -51,6 +51,8 @@ export default class Aseries extends Component {
         let start = (p-1) * this.state.pageLimit;
         let end = p * this.state.pageLimit;
 
+        let path = `aseries/${this.state.id}/${this.state.name}`;
+
         return (
             <div>
             {
@@ -76,7 +78,8 @@ export default class Aseries extends Component {
                                                 activePage={this.state.currentPage}
                                                 length={this.state.series.length}
                                                 pageLimit={this.state.pageLimit}
-                                                callback={this.changePage}/>
+                                                callback={this.changePage}
+                                                path={path} />
                                         </div>
                                     </div>
                                 </div>
