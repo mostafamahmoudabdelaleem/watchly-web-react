@@ -17,8 +17,10 @@ function App() {
     <React.Fragment>
       <Router>
         <Route exact path = "/" component = {Home} />
-        <Route path = "/movies" component = {Movies} />
-        <Route path = "/series" component = {Series} />
+        <Route exact path = "/movies" component = {Movies} />
+        <Route path = "/movies/page/:page" component = {Movies} />
+        <Route exact path = "/series" component = {Series} />
+        <Route path = "/series/page/:page" component = {Series} />
         <Route path = "/profile" component = {Profile} />
         <Route path = "/login" component = {Login} />
         <Route path = "/privacy-policy" component = {PrivacyPolicy} />

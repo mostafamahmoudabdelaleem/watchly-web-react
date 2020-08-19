@@ -14,10 +14,17 @@ import '../css/Components-media-991.css';
 export default class Series extends Component {
     constructor(props){
         super(props);
+        let { page } = this.props.match.params
+        console.log()
+        if(typeof(page) === undefined){
+            page = 1
+        }else{
+            page = parseInt(page)
+        }
         this.state = {
             allSeries: [],
             loaderIsHidden: false,
-            currentPage: 1,
+            currentPage: page,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT,
             query: ""
         };
