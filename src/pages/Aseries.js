@@ -27,6 +27,9 @@ export default class Aseries extends Component {
             currentPage: parseInt(page) || 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT
         }
+        changeDocumentTitle(this.state.name);
+        changeMetaImg(this.state.data.img_link);
+        changeMetaURL(window.location);
     }
     
     componentDidMount(){
@@ -36,9 +39,6 @@ export default class Aseries extends Component {
                 series: data,
                 loaderIsHidden: true
             })
-            changeDocumentTitle(this.state.name);
-            changeMetaImg(this.state.data.img_link);
-            changeMetaURL(window.location);
         })
     }
 
