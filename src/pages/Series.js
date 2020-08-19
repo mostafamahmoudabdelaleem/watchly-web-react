@@ -14,10 +14,12 @@ import '../css/Components-media-991.css';
 export default class Series extends Component {
     constructor(props){
         super(props);
+        let { page } = this.props.match.params
+        
         this.state = {
             allSeries: [],
             loaderIsHidden: false,
-            currentPage: 1,
+            currentPage: parseInt(page) || 1,
             pageLimit: CONFIGS.PAGINATION_PAGE_LIMIT,
             query: ""
         };
@@ -99,7 +101,8 @@ export default class Series extends Component {
                                                 activePage={this.state.currentPage}
                                                 length={list.length}
                                                 pageLimit={this.state.pageLimit}
-                                                callback={this.changePage}/>
+                                                callback={this.changePage}
+                                                path="series" />
                                         </div>
                                     </div>
                                 </div>
