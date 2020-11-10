@@ -28,6 +28,7 @@ export default class DisplayList extends Component {
                                 replace={this.props.replace}
                                 with={this.props.with}
                                 isSeries={this.props.isSeries}
+                                pre={this.props.pre}
                             />
                         )
                     })

@@ -1,8 +1,8 @@
 export const CONFIGS = {
     // backend API configs
-    BACKEND_API_URL: process.env.REACT_APP_BACKEND_API_URL,
-    ALL_SERIES_PATH: "/all_series",
-    ALL_MOVIES_PATH: "/all_movies",
+    BACKEND_API_URL: process.env.REACT_APP_BACKEND_API_URL || 'https://api.watchly.msoft.ml/api',
+    ALL_SERIES_PATH: "/series",
+    ALL_MOVIES_PATH: "/movies",
     GET_SERIES_PATH: "/series",
     GET_MOVIE_PATH: "/movies",
     GET_VIDEO_LINKS_PATH: "/links",

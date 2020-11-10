@@ -92,7 +92,8 @@ export default class Series extends Component {
                                     <div className="row">
                                         <DisplayList 
                                             list={list.slice(start, end)}
-                                            isSeries="series" />
+                                            isSeries="series"
+                                            pre="movie" />
                                         <div className="col-12 mt-4">
                                             <Pagination 
                                                 activePage={this.state.currentPage}

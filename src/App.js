@@ -11,17 +11,17 @@ import Login from './pages/Login'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfServices from './pages/TermsOfServices'
 import InstallPromote from './components/install_promote';
-import Landing from './pages/landing'
+//import Landing from './pages/landing'
 
 function App() {
   return (
     <React.Fragment>
       <Router>
-        <Route exact path = "/" component = {Landing} />
+        <Route exact path = "/" component = {Movies} />
 
         <Route exact path = "/movies" component = {Movies} />
         <Route path = "/movies/page/:page" component = {Movies} />
-        <Route path = "/movie/:id/:name" component = {Movie} />
+        <Route path = "/movie/:name" component = {Movie} />
 
         <Route exact path = "/series" component = {Series} />
         <Route path = "/series/page/:page" component = {Series} />

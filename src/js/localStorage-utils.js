@@ -68,6 +68,6 @@ export const getSeriesByID = (id) => {
 
 export const getMoviesByID = (id) => {
     let movies = getLocalMovies();
-    let item = movies.find((val) => val.link.includes(id))
+    let item = movies.find((val) => decodeURI(val.link).includes(id))
     return item
 }
