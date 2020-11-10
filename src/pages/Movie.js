@@ -13,7 +13,7 @@ import "../css/Components.css";
 import "../css/Components-media-575.css";
 import "../css/Components-media-991.css";
 
-const ArabseedScraper = require("../js/arabseed_scraper");
+import ArabseedScraper from "../js/arabseed_scraper";
 
 export default class Movie extends Component {
   constructor(props) {

@@ -1,5 +1,3 @@
-
-
 class ArabseedScraper {
   getMovieID(link) {
     const regex = /\/\w+\//i;
@@ -52,4 +50,4 @@ class ArabseedScraper {
   }
 }
 
-module.exports = new ArabseedScraper();
+export default ArabseedScraper;
