@@ -13,7 +13,7 @@ import "../css/Components.css";
 import "../css/Components-media-575.css";
 import "../css/Components-media-991.css";
 
-import ArabseedScraper from "../js/arabseed_scraper";
+import {getVideoLink} from "../js/arabseed_scraper";
 
 export default class Movie extends Component {
   constructor(props) {
@@ -31,7 +31,7 @@ export default class Movie extends Component {
     const data = getMoviesByID(this.state.name);
     let links = {};
     if (typeof data.sources_links["480p"] !== undefined) {
-      ArabseedScraper.getMovie(data.sources_links["480p"]).then((link) => {
+      getVideoLink(data.sources_links["480p"]).then((link) => {
         links["480p"] = link;
         this.setState({
           data,
