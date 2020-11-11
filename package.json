@@ -1,6 +1,6 @@
 {
   "name": "watchly-web-react",
-  "version": "1.0.61",
+  "version": "1.0.62",
   "private": true,
   "dependencies": {
     "@pwabuilder/pwaauth": "^0.9.7",
