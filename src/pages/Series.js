@@ -92,8 +92,7 @@ export default class Series extends Component {
                                     <div className="row">
                                         <DisplayList 
                                             list={list.slice(start, end)} 
-                                            replace="series"
-                                            with="aseries"
+                                            pre="episode"
                                             isSeries="series"
                                         />
                                         <div className="col-12 mt-4">

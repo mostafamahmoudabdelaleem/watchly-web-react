@@ -62,7 +62,7 @@ export const getLocalSeriesTS = () => {
 
 export const getSeriesByID = (id) => {
     let series = getLocalSeries();
-    let item = series.find((val) => val.link.includes(id))
+    let item = series.find((val) => decodeURI(val.link).includes(id))
     return item
 }
 

@@ -30,7 +30,19 @@ export default class Movie extends Component {
   componentDidMount() {
     const data = getMoviesByID(this.state.name);
     let links = {};
-    if (typeof data.sources_links["480p"] !== undefined) {
+    if (data.sources_links["480p"] === undefined) {
+      getVideoLink(data.sources_links["720p"]).then((link) => {
+        links["720p"] = link;
+        this.setState({
+          data,
+          links,
+          loaderIsHidden: true,
+        });
+        changeDocumentTitle(this.state.name);
+        changeMetaImg(this.state.data.img_link);
+        changeMetaURL(window.location);
+      });
+    } else {
       getVideoLink(data.sources_links["480p"]).then((link) => {
         links["480p"] = link;
         this.setState({
