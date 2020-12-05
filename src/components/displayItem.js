@@ -5,14 +5,7 @@ import QualityBadge from "./qualityBadge";
 
 export default class DisplayItem extends Component {
   generateLink = (link) => {
-    if (this.props.replace === "undefined" && this.props.with === "undefined") {
-      return ('/' + this.props.pre + (link.split("arabseed.net", 2)[1]));
-    } else {
-      return ('/' + this.props.pre + (link.split("arabseed.net", 2)[1])).replace(
-        this.props.replace,
-        this.props.with
-      );
-    }
+    return ('/' + this.props.pre + (link.split("arabseed.net", 2)[1]));
   };
 
   render() {
