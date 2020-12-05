@@ -53,8 +53,7 @@ export default class Home extends Component {
                                         <div className="row">
                                             <DisplayList 
                                                 list={this.state.movies.slice(0,12)} 
-                                                replace="series"
-                                                with="aseries"
+                                                pre="movie"
                                                 isSeries="series"
                                             />
                                         </div>
