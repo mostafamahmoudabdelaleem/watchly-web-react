@@ -5,7 +5,10 @@ import QualityBadge from "./qualityBadge";
 
 export default class DisplayItem extends Component {
   generateLink = (link) => {
-    return ('/' + this.props.pre + (link.split("arabseed.net", 2)[1]));
+    let path = link.split("arabseed.cam", 2)[1];
+    let resp = '/' + this.props.pre + path;
+    //console.log(path)
+    return resp;
   };
 
   render() {

@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 import DisplayItem from './displayItem'
 
 export default class DisplayList extends Component {
-    
-    
-    displayList = (list) => {
-        console.log("displaying Items")
-        list.map((item, i) => {
-            return(
-                <DisplayItem item={item} key={i}/>
-            )
-        })
-    }
 
 
     
