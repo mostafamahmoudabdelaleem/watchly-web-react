@@ -14,9 +14,16 @@ export const fetchSeries = (callback) => {
         fetch(url)
         .then(res => res.json())
         .then(data => {
-            localStorage.setItem(CONFIGS.LOCAL_SERIES_KEY, JSON.stringify(data))
+            let series = data.filter((val) => {
+                if(val.sources_links !== undefined){
+                    return Object.keys(val.sources_links).length !== 0
+                }else{
+                    return false
+                }
+            });
+            localStorage.setItem(CONFIGS.LOCAL_SERIES_KEY, JSON.stringify(series))
             localStorage.setItem(CONFIGS.LOCAL_SERIES_TIMESTAMP_KEY, (Math.floor(Date.now() / 1000)).toString())
-            callback(data)
+            callback(series)
         }).catch(err => console.log(err))
     }else{
         callback(localSeries)
@@ -37,9 +44,16 @@ export const fetchMovies = (callback) => {
         fetch(url)
         .then(res => res.json())
         .then(data => {
-            localStorage.setItem(CONFIGS.LOCAL_MOVIES_KEY, JSON.stringify(data))
+            let movies = data.filter((val) => {
+                if(val.sources_links !== undefined){
+                    return Object.keys(val.sources_links).length !== 0
+                }else{
+                    return false
+                }
+            });
+            localStorage.setItem(CONFIGS.LOCAL_MOVIES_KEY, JSON.stringify(movies))
             localStorage.setItem(CONFIGS.LOCAL_MOVIES_TIMESTAMP_KEY, (Math.floor(Date.now() / 1000)).toString())
-            callback(data)
+            callback(movies)
         }).catch(err => console.log(err))
     }else{
         callback(localMovies)
