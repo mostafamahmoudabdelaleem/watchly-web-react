@@ -32,7 +32,7 @@ export const getVideoLink = (url) => {
     data.append("op", "download2");
     data.append("id", id);
 
-    fetch(`https://cors-anywhere.herokuapp.com/${url}`, {
+    fetch(`https://watchlycors.azurewebsites.net/${url}`, {
       method: "POST",
       body: data,
     })
@@ -42,6 +42,7 @@ export const getVideoLink = (url) => {
         if (download_link === null) {
           reject("Can't extract download links");
         }
+        console.log(download_link)
         resolve(download_link);
       })
       .catch((err) => reject(err));
