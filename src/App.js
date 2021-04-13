@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom'	
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import Movies from './pages/Movies'
 import Movie from './pages/Movie'
 import Aseries from './pages/Aseries'
@@ -11,13 +11,13 @@ import Login from './pages/Login'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfServices from './pages/TermsOfServices'
 import InstallPromote from './components/install_promote';
-//import Landing from './pages/landing'
+import Landing from './pages/landing'
 
 function App() {
   return (
     <React.Fragment>
       <Router>
-        <Route exact path = "/" component = {Home} />
+        <Route exact path = "/" component = {Landing} />
 
         <Route exact path = "/movies" component = {Movies} />
         <Route path = "/movies/page/:page" component = {Movies} />
